@@ -1,4 +1,5 @@
 #! /bin/sh
+yum -y install epel-release
 yum -y install git
 
 yum -y install sl
@@ -8,7 +9,7 @@ yum -y install oneko #고양이
 yum -y install pv #
 
 yum -y install fish #shell
-yum -y install mesa-libGLU # for Nuke
+yum -y install mesa-libGLU # for Nuke and Other Graphics SW.
 yum -y install transmission #torrent
 yum -y install tigervnc #VNC
 yum -y install filezilla #SFTP
