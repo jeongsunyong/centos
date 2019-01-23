@@ -23,3 +23,7 @@ cd /tmp
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
 yum -y localinstall google-chrome-stable_current_x86_64.rpm
 
+#djv vier 1.2.5-1 version
+cd /tmp https://sourceforge.net/projects/djv/files/djv-stable/1.2.5/DJV-1.2.5-1.x86_64.rpm/download
+yum -y install DJV-1.1.5-1.x86_64.rpm
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/app/djv-install-Debug/lib
