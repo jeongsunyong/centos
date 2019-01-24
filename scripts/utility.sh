@@ -13,6 +13,7 @@ yum -y install mesa-libGLU # for Nuke and Other Graphics SW.
 yum -y install transmission #torrent
 yum -y install tigervnc #VNC
 yum -y install filezilla #SFTP
+yum -y install tree
 
 #ripgrep
 yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo
