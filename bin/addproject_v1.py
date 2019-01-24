@@ -7,19 +7,20 @@ first=["asset","config","doc","edit","in","out","shot"]
 second=["char","shader","ocio","thumbnail","concept"]
 
 #directory
+#1
 asset = ["char","shader"]
 config = ["ocio","thumbnail"]
-doc
-edit
-in
-out
-shot
-
-char
-shader
-ocio
-thumbnail
-concept
+doc = []
+edit = []
+in = []
+out = []
+shot = []
+#2
+char = []
+shader = []
+ocio = []
+thumbnail = []
+concept = []
 
 
 order=[first,second]
@@ -35,5 +36,7 @@ for i in range(0,len(order)):
 
 
 
-
-
+"""
+ 폴더별로 나누는것 -> 검색 가능하니깐 별로 중요하지 않음
+ 간단하게 짜기
+"""
