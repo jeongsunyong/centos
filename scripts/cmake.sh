@@ -8,7 +8,7 @@ if [ ! -d " home/$USER/app" ]; then
 fi
 tar -zxvf cmake-3.13.3.tar.gz -C /home/$USER/app
 cd /home/$USER/app
-mv /home/$USER/app/cmake-3.13.3 /home/$USER/app/$cmake-3.13.3_src
+mv /home/$USER/app/cmake-3.13.3 /home/$USER/app/cmake-3.13.3_src
 mkdir cmake-3.13.3
 cd /home/$USER/app/cmake-3.13.3_src
 
