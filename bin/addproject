@@ -29,7 +29,7 @@ def addProject(projectName):
 			os.makedirs(p)
 		except:
 			return " %s 프로젝트를 생성할 수 없습니다." % (projectName)
-		return None
+	return None
 
 def checkRoot():
 	"""
