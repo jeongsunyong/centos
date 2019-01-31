@@ -19,12 +19,12 @@ def genThumb(path):
 
 	target = p+"/"+filename+ext_t
 	result = p+"/"+filename+ext
-	cmd = "convert %s -thumbnail %s -background black -gravity center -extent %s %s" % (target,size,size,result)
+	#cmd = "convert %s -thumbnail %s -background black -gravity center -extent %s %s" % (target,size,size,result)
 
 	#subprocess 리스트로 사용하기때문에 cmds 이용
-	cmds = ["convert", src, "-thumbnail", size,
+	cmds = ["convert", target, "-thumbnail", size,
 			"-background", "blakc", "-gravity", "center",
-			"-extent", size, dst]
+			"-extent", size, result]
 			#command부분 list로 변경
 
 	a = subprocess.Popen(cmds, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
