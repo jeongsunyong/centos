@@ -4,7 +4,7 @@ import os
 import subprocess
 import sys
 
-p = "/project/c/in"
+p = "/project/b/in"
 
 #스앵님코드
 #def searchItem(root):
@@ -26,57 +26,71 @@ p = "/project/c/in"
 #	seqs.append(shot)
 #	return seqs
 
+#code3
+#def proxyPath(p):
+#	return p+"_proxy"
 
-def genmov(path):
+
+def genmov(path_list):
 	"""
 	경로를 입력받으면 mov를 만든다.
 	"""
-
-	if not os.path.exists("/home/$USER/app/ffmpeg"):
+	if os.path.exists("/home/$USER/app/ffmpeg/ffmpeg"):
 		return "", "ffmpeg가 설치되지 않았습니다."
 
-	if not os.path.exists("/tmp/mov"):
-		os.makedirs("/tmp/mov")
-	print "test"
-	f = os.listdir(path)
-	f.sort()
-	filename_s,ext = os.path.splitext(f[0])
-	filename_e,ext = os.path.splitext(f[-1])
-	filename_s,startNum = os.path.splitext(filename_s)
-	filename_e,frame = os.path.splitext(filename_e)
-	startNum = int(startNum)
-	frame = int(frame)-startNum
+	for i in path_list:
+		f = os.listdir(i)
+		f.sort()
+		filename_s,ext = os.path.splitext(f[0])
+		filename_e,ext = os.path.splitext(f[-1])
+		filename,startNum = os.path.splitext(filename_s)
+		filename,frames = os.path.splitext(filename_e)
+		print startNum.replace(".","")
+		startNum = int(startNum.replace(".",""))
+		frames = int(frames.replace(".","")) - startNum
+		print frames
 
-	cmds = ["ffmpeg", "-f", "image2", "-start_number", startNum, "-r", "24",
-			"-i", path+filename+"%4d.jpg","-vframes","-vcodec","libx264","/tmp/mov/"+filename+".mov"]
+		cmds = ("/home/$USER/app/ffmpeg/ffmpeg -f image2 -start_number "
+			+str(startNum)+" -r 24 -i "+i+"/"+filename+
+			".%d.jpg -vframes "+str(frames)+" -vcodec libx264 /"+i+"/"+filename+".mov")
+		print(cmds)	
+		os.system(cmds)
+		return
 
-	a = subprocess.Popen(cmds, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-	return a.communicate()
-
-def genjpg(path):
+def genjpg(p):
 
 	if not os.path.exists("/usr/bin/convert"):
 		return "", "ImageMagick이 설치되지 않았습니다."
 	for i in os.listdir(p):
 		for j in os.listdir(p+"/"+i):
-			path=p+"/"+i+"/"+j
+			path_list=[]
+			if not os.path.exists(p+"/"+i+"/"+j+"/"+j+"_proxy"):
+				os.makedirs(p+"/"+i+"/"+j+"/"+j+"_proxy")
+			path_list.append(p+"/"+i+"/"+j+"/"+j+"_proxy")
 			for k in os.listdir(p+"/"+i+"/"+j):
 				filename,ext = os.path.splitext(k)
-				dst = path+"/"+filename+".jpg"
-				cmds = "convert "+path+"/"+k+" "+dst
+				dst = p+"/"+i+"/"+j+"/"+j+"_proxy/"+filename+".jpg"
+				cmds = "convert "+p+"/"+i+"/"+j+"/"+k+" "+dst
 				os.system(cmds)
-			genmov(path)
-			#genmov함수진입안함?...
-	return
+			print path_list
+
+	return path_list
+
+def rmjpg(path_list):
+	for i in path_list:
+		cmds = "rm " +i+"/*.jpg"
+		os.system(cmds)
+	return 
 
 if __name__=='__main__':
 
-	p = "/project/c/in"
-	genjpg(p)
-	
+	p = "/project/b/in"
+	path_list = genjpg(p)
+	genmov(path_list)
+	rmjpg(path_list)
 
 #	src = "/project/circle/in/aces_exr/A003C025_150830_R0D0/A003C025_150830_R0D0.078727.exr"
 #	stdOut, stdErr = genmov(src)
 #	if stdErr:
-#		sys.stderr.write(stdErr)
+#	sys.stderr.write(stdErr)
 #	sys.stdout.write(stdOut)

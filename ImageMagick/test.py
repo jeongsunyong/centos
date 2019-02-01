@@ -23,7 +23,7 @@ def genThumb(path):
 
 	#subprocess 리스트로 사용하기때문에 cmds 이용
 	cmds = ["convert", target, "-thumbnail", size,
-			"-background", "blakc", "-gravity", "center",
+			"-background", "black", "-gravity", "center",
 			"-extent", size, result]
 			#command부분 list로 변경
 
