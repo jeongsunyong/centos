@@ -15,6 +15,7 @@ yum -y install tigervnc #VNC
 yum -y install filezilla #SFTP
 yum -y install tree
 yum -y install ImageMagick
+yum -y install mediainfo
 
 #ripgrep
 yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo
