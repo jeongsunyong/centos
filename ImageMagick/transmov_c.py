@@ -73,9 +73,11 @@ def genMov(file_list):
 				path = "/tmp/proxy"+i+"/"+j[1]
 				p=(re.findall("[.](\d+)[.]",path.replace("\\","/")))
 				li.extend(p)
-
+			newlist = []
 			for k in li:
-				print int(k)
+				newlist.append(int(k))
+			if li == None :
+				break
 			##########################
 #			li.sort()
 #			len(li)
@@ -153,7 +155,7 @@ def genMov(file_list):
 
 if __name__=='__main__':
 
-	p = "/project/d/in/aces_exr"
+	p = "/project/cc/in/aces_exr"
 	file_list=searchItem(p)
 	mkProxy(file_list)
 	genJpg(file_list)
