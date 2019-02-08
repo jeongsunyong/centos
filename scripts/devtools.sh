@@ -1,5 +1,5 @@
 #!/bin/sh
-if[[$EUID -ne 0]];then
+if [[$EUID -ne 0]];then
         echo"This scripts must be run as Root" 1>&2
         exit 1
 fi
