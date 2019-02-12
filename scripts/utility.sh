@@ -15,7 +15,6 @@ yum -y install tigervnc #VNC
 yum -y install filezilla #SFTP
 yum -y install tree
 yum -y install ImageMagick
-yum -y install mediainfo
 yum -y install gvim
 
 #ripgrep
