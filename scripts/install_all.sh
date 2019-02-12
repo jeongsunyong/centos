@@ -11,3 +11,8 @@ devtools.sh
 FFmpeg.sh
 handbrake.sh
 
+#
+scl enable devtoolset-6 ./cmake.sh
+scl enable devtoolset-6 ./openexr.sh
+scl enable devtoolset-6 ./opencolorio.sh
+
