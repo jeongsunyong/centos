@@ -18,3 +18,6 @@ pip install --user pillow
 pip install --user timecode
 pip install --user edl
 pip install --user opentimelineio
+pip install --user pymongo
+pip install --user psycopg2
+pip install --user psycopg2-binary
