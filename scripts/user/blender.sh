@@ -1,4 +1,8 @@
 #!/bin/sh
+"""
+#install Blender
+	needs manual operation. 
+"""
 if [ ! -d "/home/$USER/app" ]; then
 	mkdir /home/$USER/app
 fi

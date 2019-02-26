@@ -1,3 +1,11 @@
+#!/bin/sh
+"""
+install Cmake
+	needed newest version gcc.
+		yum install centos-release-scl
+		yum install devtoolset-6
+"""
+
 cd /tmp
 rm /tmp/cmake*
 wget https://github.com/Kitware/CMake/releases/download/v3.13.3/cmake-3.13.3.tar.gz

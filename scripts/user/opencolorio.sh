@@ -1,4 +1,11 @@
 #!/bin/sh
+"""
+install opencolorIO v1.0.9
+	after install, needed manual operation
+	~/centos/env/init.bash
+		$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/app/OpenColorIO/lib
+		$ export OCIO=$HOME/app/OpenColorIO-Configs/aces_1.0.3/config.ocio
+"""
 if [ ! -d "/home/$USER/app" ]; then
 	mkdir /home/$USER/app
 fi

@@ -1,5 +1,7 @@
 #! /bin/sh
-
+"""
+#install trans
+"""
 if [ ! -d "$HOME/bin" ]; then
 	 mkdir $HOME/bin
 fi

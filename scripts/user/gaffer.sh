@@ -1,4 +1,8 @@
 #!/bin/sh
+"""
+#install gaffer
+	lighting tool
+"""
 if [ ! -d "/home/$USER/app" ]; then
 	mkdir /home/$USER/app
 fi

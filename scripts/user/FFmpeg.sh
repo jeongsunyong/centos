@@ -1,4 +1,10 @@
 #!/bin/sh
+"""
+#install FFmpeg
+	contents :
+		ffmpeg
+		ffprobe	
+"""
 
 cd ~
 if [ ! -d "/home/$USER/app" ]; then

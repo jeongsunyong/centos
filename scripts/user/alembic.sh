@@ -1,4 +1,15 @@
 #!/bin/sh
+"""
+compile ABC
+	needed yum devtoolset-6-libatomic-devel
+	contents:
+		abcdiff
+		abcecho
+		abcechobounds
+		abcls
+		abcstitcher
+		abctree		
+"""
 if [ ! -d "/home/$USER/app" ]; then
 	mkdir /home/$USER/app
 fi
