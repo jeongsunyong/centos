@@ -1,5 +1,8 @@
-
 #! /bin/sh
+"""
+install various utility.
+"""
+
 if [[$EUID -ne 0]];then
         echo"This scripts must be run as Root" 1>&2
         exit 1
@@ -8,11 +11,11 @@ fi
 yum -y install epel-release
 yum -y install git
 
-yum -y install sl
-yum -y install banner
+yum -y install sl #열차
+yum -y install banner 
 yum -y install espeak
 yum -y install oneko #고양이
-yum -y install pv #
+yum -y install pv 
 
 yum -y install fish #shell
 yum -y install mesa-libGLU # for Nuke and Other Graphics SW.

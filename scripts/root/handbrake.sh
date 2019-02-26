@@ -1,4 +1,7 @@
 #!/bin/sh
+"""
+#install handbrake (video converting tool)
+"""
 if [[ $EUID -ne 0 ]]; then
 	echo " This script must be run as ROOT" 1>&2
 	exit 1

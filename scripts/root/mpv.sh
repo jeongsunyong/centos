@@ -1,4 +1,8 @@
 #!/bin/sh
+"""
+#install mpv player
+"""
+
 if [[$EUID -ne 0]]; then
         echo"This scripts must be run as Root" 1>&2
         exit 1
