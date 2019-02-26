@@ -1,3 +1,4 @@
+
 #! /bin/sh
 if [[$EUID -ne 0]];then
         echo"This scripts must be run as Root" 1>&2
